@@ -8,6 +8,9 @@
 - create:
     - ~/.tmux/plugins
 
+- shell:
+    - [git submodule update --init --recursive, "Updating submodules"]
+
 - link:
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux/plugins/tmp: tmux/tmp
