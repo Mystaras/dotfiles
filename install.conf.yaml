@@ -4,20 +4,30 @@
 
 - clean:
     "~":
+    "~/.vim":
  
 - create:
     - ~/.tmux/plugins
+    - ~/.vim
 
 - shell:
     - [git submodule update --init --recursive, "Updating submodules"]
 
 - link:
-    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf:        tmux/tmux.conf
     ~/.tmux/plugins/tmp: tmux/tmp
-    
+    ~/.vim/vimrc:        vim/vimrc
+
 - shell:
     -
       command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
       stdout: true
       description: Installing tmux plugins
-      quiet: true 
+      quiet: true
+    -
+      command: vim +PlugInstall +qall
+      stdout: true
+      description: Installing vim plugins
+      quiet: true
+      
+
