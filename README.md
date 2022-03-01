@@ -1,2 +1,3 @@
 # dotfiles
-My Dotfiles
+
+Also clone submodules : `git clone --recurse-submodules https://github.com/Mystaras/dotfiles.git`

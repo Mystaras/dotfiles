@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        relink: true
+
+- clean:
+    "~":
+ 
+- create:
+    - ~/.tmux/plugins
+
+- link:
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux/plugins/tmp: tmux/tmp
+    
+- shell:
+    -
+      command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+      stdout: true
+      description: Installing tmux plugins
+      quiet: true 
