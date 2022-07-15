@@ -3,20 +3,18 @@
         relink: true
 
 - clean:
-    "~":
+    "~/.tmux.conf":
+    "~/.tmux":
     "~/.vim":
  
-- create:
-    - ~/.tmux/plugins
-    - ~/.vim
-
 - shell:
+    # Update submodules
     - [git submodule update --init --recursive, "Updating submodules"]
 
 - link:
-    ~/.tmux.conf:        tmux/tmux.conf
-    ~/.tmux/plugins/tmp: tmux/tmp
-    ~/.vim/vimrc:        vim/vimrc
+    ~/.tmux.conf: tmux.conf
+    ~/.tmux:      tmux/
+    ~/.vim:       vim/
 
 - shell:
     -
@@ -29,5 +27,3 @@
       stdout: true
       description: Installing vim plugins
       quiet: true
-      
-

@@ -1,0 +1,7 @@
+# Vim
+vim/
+!vim/vimrc
+
+# Tmux
+tmux/
+!tmux/plugins/tmp
