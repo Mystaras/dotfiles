@@ -6,15 +6,39 @@
     "~/.tmux.conf":
     "~/.tmux":
     "~/.vim":
- 
+
+# general packages
 - shell:
-    # Update submodules
+    - [sudo apt-get update]
     - [git submodule update --init --recursive, "Updating submodules"]
+    - [sudo apt-get install build-essential git openjdk-11-jdk zsh tmux vim curl wireshark unzip]
+
+# Installation scripts
+- shell:
+    - chmod +x install-scripts/zsh-setup.sh
+    - [install-scripts/zsh-setup.sh, "Setting-up zsh"]
+    - [chsh -s $(which zsh), "Making zsh the default shell"]
+    - [install-scripts/pyenv-install.sh, "Installing pyenv"]
+    - [install-script/pwntools-pyenv.sh, "Setting up pyenv for pwntools"]
+    # TODO: docker
+
+# Useful Apps
+- shell:
+    - [mkdir ~/Apps/]
+    - [(cd ~/Apps/ && curl -L -O "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_10.1.4_build/ghidra_10.1.4_PUBLIC_20220519.zip" && unzip ghidra_*.zip)]
+    - [(cd ~/Apps/ && git clone https://github.com/pwndbg/pwndbg)]
+    - [(cd ~/Apps/pwndbg && ./setup.sh)]
 
 - link:
-    ~/.tmux.conf: tmux.conf
-    ~/.tmux:      tmux/
-    ~/.vim:       vim/
+    ~/.tmux.conf:
+      force: true
+      path: tmux.conf
+    ~/.tmux:
+      force: true
+      path: tmux/
+    ~/.vim:       
+      force: true
+      path: vim/
 
 - shell:
     -
