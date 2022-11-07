@@ -1,0 +1,21 @@
+define init-peda
+source /home/mystaras/Apps/peda/peda.py
+end
+document init-peda
+Initializes the PEDA (Python Exploit Development Assistant for GDB) framework
+end
+
+define init-pwndbg
+source /home/mystaras/Apps/pwndbg/gdbinit.py
+
+end
+document init-pwndbg
+Initializes PwnDBG
+end
+
+define init-gefi
+source /home/mystaras/Apps/gef/gdbinit-gef.py
+end
+document init-gef
+Initializes GEF (GDB Enhanced Features)
+end
